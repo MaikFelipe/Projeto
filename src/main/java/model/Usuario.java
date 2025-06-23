@@ -18,6 +18,21 @@ public class Usuario {
     private String login;
     private String senha;
     private String nivelAcesso;
+    
+       public Usuario() {}
+
+    public Usuario(int id, String nomeCompleto, String cpf, String email, String telefone, String cargo, String login, String senha, String nivelAcesso) {
+        this.id = id;
+        this.nomeCompleto = nomeCompleto;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.cargo = cargo;
+        this.login = login;
+        this.senha = senha;
+        this.nivelAcesso = nivelAcesso;
+    }
+    
 
     public int getId() {
         return id;

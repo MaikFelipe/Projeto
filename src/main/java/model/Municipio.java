@@ -23,6 +23,7 @@ public class Municipio {
         this.secretarioEducacao = secretarioEducacao;
     }
     
+    
     public int getId() {
         return id;
     }
