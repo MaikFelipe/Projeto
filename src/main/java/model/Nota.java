@@ -11,14 +11,14 @@ package model;
 public class Nota {
     private int id;
     private Aluno aluno;
-    private String disciplina;
+    private Disciplina disciplina;
     private Turma turma;
     private int bimestre;
     private double nota;
 
     public Nota() {}
 
-    public Nota(int id, Aluno aluno, String disciplina, Turma turma, int bimestre, double nota) {
+    public Nota(int id, Aluno aluno, Disciplina disciplina, Turma turma, int bimestre, double nota) {
         this.id = id;
         this.aluno = aluno;
         this.disciplina = disciplina;
@@ -42,10 +42,10 @@ public class Nota {
         this.aluno = aluno;
     }
 
-    public String getDisciplina() {
+    public Disciplina getDisciplina() {
         return disciplina; 
     }
-    public void setDisciplina(String disciplina) { 
+    public void setDisciplina(Disciplina disciplina) { 
         this.disciplina = disciplina; 
     }
 

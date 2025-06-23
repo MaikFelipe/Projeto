@@ -16,14 +16,14 @@ public class Professor {
     private String cpf;
     private String email;
     private String telefone;
-    private List<String> disciplinas;
+    private List<Disciplina> disciplinas;
     private double cargaHorariaAtribuidaPorTurma;
     private double cargaHorariaComplementar;
     private String observacoes;
 
     public Professor() {}
 
-    public Professor(int id, String nome, String cpf, String email, String telefone, List<String> disciplinas, double cargaHorariaAtribuidaPorTurma, double cargaHorariaComplementar, String observacoes) {
+    public Professor(int id, String nome, String cpf, String email, String telefone, List<Disciplina> disciplinas, double cargaHorariaAtribuidaPorTurma, double cargaHorariaComplementar, String observacoes) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -71,10 +71,10 @@ public class Professor {
         this.telefone = telefone; 
     }
 
-    public List<String> getDisciplinas() {
+    public List<Disciplina> getDisciplinas() {
         return disciplinas;
     }
-    public void setDisciplinas(List<String> disciplinas) { 
+    public void setDisciplinas(List<Disciplina> disciplinas) { 
         this.disciplinas = disciplinas;
     }
 

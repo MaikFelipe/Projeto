@@ -16,7 +16,7 @@ public class Transferencia {
     private Escola escolaOrigem;
     private Escola escolaDestino;
     private LocalDate dataSolicitacao;
-    private String status; // "solicitada", "aprovada", "recusada"
+    private String status;
     private boolean notasMigradas;
 
     public Transferencia() {}
