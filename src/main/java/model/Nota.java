@@ -39,7 +39,8 @@ public class Nota {
         return aluno; 
     }
     public void setAluno(Aluno aluno) {
-        this.aluno = aluno; }
+        this.aluno = aluno;
+    }
 
     public String getDisciplina() {
         return disciplina; 
