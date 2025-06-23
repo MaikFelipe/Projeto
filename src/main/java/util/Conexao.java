@@ -8,6 +8,17 @@ package util;
  *
  * @author LASEDi 1781
  */
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Conexao {
-    
+
+    private static final String URL = "jdbc:mysql://localhost:3306/nome_do_banco?useSSL=false&serverTimezone=UTC";
+    private static final String USER = "seu_usuario";
+    private static final String PASSWORD = "sua_senha";
+
+    public static Connection conectar() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
 }
