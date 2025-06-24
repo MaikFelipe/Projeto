@@ -14,7 +14,7 @@ import java.time.LocalTime;
 public class CalendarioAula {
     private int id;
     private Turma turma;
-    private String disciplina;
+    private Disciplina disciplina;
     private Usuario professor;
     private String diaSemana;
     private LocalTime horarioInicio;
@@ -22,7 +22,7 @@ public class CalendarioAula {
 
     public CalendarioAula() {}
 
-    public CalendarioAula(int id, Turma turma, String disciplina, Usuario professor, String diaSemana, LocalTime horarioInicio, LocalTime horarioFim) {
+    public CalendarioAula(int id, Turma turma, Disciplina disciplina, Usuario professor, String diaSemana, LocalTime horarioInicio, LocalTime horarioFim) {
         this.id = id;
         this.turma = turma;
         this.disciplina = disciplina;
@@ -47,10 +47,10 @@ public class CalendarioAula {
         this.turma = turma;
     }
 
-    public String getDisciplina() {
+    public Disciplina getDisciplina() {
         return disciplina; 
     }
-    public void setDisciplina(String disciplina) {
+    public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
     }
 

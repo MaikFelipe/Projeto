@@ -13,6 +13,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import model.CalendarioAula;
+import model.Disciplina;
 import model.Turma;
 import model.Usuario;
 import model.util.Conexao;
@@ -20,11 +21,11 @@ import model.util.Conexao;
 public class CalendarioAulaDAO {
     
     public void inserir(CalendarioAula ca) throws SQLException {
-        String sql = "INSERT INTO calendario_aula (turma_id, disciplina, professor_id, dia_semana, horario_inicio, horario_fim) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO calendario_aula (turma_id, disciplina_id, professor_id, dia_semana, horario_inicio, horario_fim) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = Conexao.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, ca.getTurma().getId());
-            stmt.setString(2, ca.getDisciplina());
+            stmt.setInt(2, ca.getDisciplina().getId());
             stmt.setInt(3, ca.getProfessor().getId());
             stmt.setString(4, ca.getDiaSemana());
             stmt.setTime(5, Time.valueOf(ca.getHorarioInicio()));
@@ -51,7 +52,8 @@ public class CalendarioAulaDAO {
                 professor.setId(rs.getInt("professor_id"));
                 ca.setProfessor(professor);
 
-                ca.setDisciplina(rs.getString("disciplina"));
+                Disciplina d = new Disciplina();
+                d.setId(rs.getInt("disciplina_id"));
                 ca.setDiaSemana(rs.getString("dia_semana"));
                 ca.setHorarioInicio(rs.getTime("horario_inicio").toLocalTime());
                 ca.setHorarioFim(rs.getTime("horario_fim").toLocalTime());
@@ -67,7 +69,7 @@ public class CalendarioAulaDAO {
         try (Connection conn = Conexao.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, ca.getTurma().getId());
-            stmt.setString(2, ca.getDisciplina());
+            stmt.setInt(2, ca.getDisciplina().getId());
             stmt.setInt(3, ca.getProfessor().getId());
             stmt.setString(4, ca.getDiaSemana());
             stmt.setTime(5, Time.valueOf(ca.getHorarioInicio()));
