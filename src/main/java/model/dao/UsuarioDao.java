@@ -20,7 +20,7 @@ public class UsuarioDao {
 
     public boolean loginExiste(String login) throws SQLException {
         String sql = "SELECT COUNT(*) FROM usuario WHERE login = ?";
-        try (Connection conn = Conexao.conectar();
+        try (Connection conn = Conexao.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, login);
             try (ResultSet rs = stmt.executeQuery()) {
@@ -38,7 +38,7 @@ public class UsuarioDao {
         }
 
         String sql = "INSERT INTO usuario (nomeCompleto, cpf, email, telefone, cargo, login, senha, nivelAcesso) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try (Connection conn = Conexao.conectar();
+        try (Connection conn = Conexao.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, u.getNomeCompleto());
@@ -63,7 +63,7 @@ public class UsuarioDao {
 
     public Usuario buscarPorLogin(String login) throws SQLException {
         String sql = "SELECT * FROM usuario WHERE login = ?";
-        try (Connection conn = Conexao.conectar();
+        try (Connection conn = Conexao.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, login);

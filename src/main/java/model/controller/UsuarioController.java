@@ -8,16 +8,16 @@ package model.controller;
  *
  * @author LASEDi 1781
  */
-import model.dao.UsuarioDAO;
+import model.dao.UsuarioDao;
 import model.Usuario;
 
 import java.sql.SQLException;
 
 public class UsuarioController {
-    private UsuarioDAO usuarioDao;
+    private UsuarioDao usuarioDao;
 
     public UsuarioController() {
-        this.usuarioDao = new UsuarioDAO();
+        this.usuarioDao = new UsuarioDao();
     }
 
     public boolean cadastrarUsuario(Usuario u) {
