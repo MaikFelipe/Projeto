@@ -8,17 +8,16 @@ package model.controller;
  *
  * @author LASEDi 1781
  */
-import model.dao.UsuarioDao;
+import model.dao.UsuarioDAO;
 import model.Usuario;
 
 import java.sql.SQLException;
 
 public class UsuarioController {
-
-    private UsuarioDao usuarioDao;
+    private UsuarioDAO usuarioDao;
 
     public UsuarioController() {
-        this.usuarioDao = new UsuarioDao();
+        this.usuarioDao = new UsuarioDAO();
     }
 
     public boolean cadastrarUsuario(Usuario u) {
@@ -26,7 +25,7 @@ public class UsuarioController {
             usuarioDao.cadastrarUsuario(u);
             return true;
         } catch (SQLException e) {
-            System.err.println("Erro no controller ao cadastrar usuário: " + e.getMessage());
+            System.err.println("Erro no controller ao cadastrar usuario: " + e.getMessage());
             return false;
         }
     }
